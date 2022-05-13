@@ -8,7 +8,6 @@ function Home() {
       const res = await fetch(`/api/${slug}`);
       const json = await res.json();
       if (json.data) {
-        console.log(json.data)
         setApiResponse(json.data);
       }
     } catch (e) {
@@ -26,9 +25,11 @@ function Home() {
     <main align="center">
       <img src="/images/pwa-on-swa.png" alt="PWA on SWA" width="200" />
       <p>
-        Minimalistic starter of a <a href="https://aka.ms/learn-pwa">Progressive Web Application</a> scaffolded by
-        Create React App with a service worker automated by <a href="https://workboxjs.org">Workbox</a> and
-        configured to run on <a href="https://aka.ms/swa-learn">Azure Static Web Apps</a>
+        Minimalistic starter of a{' '}
+        <a href="https://aka.ms/learn-pwa">Progressive Web Application</a>{' '}
+        scaffolded by Create React App with a service worker automated by{' '}
+        <a href="https://workboxjs.org">Workbox</a> and configured to run on{' '}
+        <a href="https://aka.ms/swa-learn">Azure Static Web Apps</a>
       </p>
       <h1>Demo areas</h1>
 
@@ -37,8 +38,9 @@ function Home() {
           <h3>Single-page-app routing</h3>
           <ul>
             <li>
-              <a href="/about">A route within SPA</a> (open this URL in a new
-              tab to make sure that HTML5 navigation is working)
+              <a href="/about">A route within SPA</a> - open this URL in a new
+              tab both in online and offline mode to make sure that HTML5
+              navigation is working
             </li>
             <li>
               <a href="/privacy.html">A route excluded from SPA</a>
@@ -89,10 +91,13 @@ function Home() {
           <br />
           <br />
           {apiResponse ? (
-            { apiResponse }
+            <>{apiResponse}</>
           ) : (
             <p>
-              <i>Open browser's console and click a button to trigger API endpoint</i>
+              <i>
+                Open browser's console and click a button to trigger API
+                endpoint
+              </i>
             </p>
           )}
           <hr />
@@ -100,7 +105,7 @@ function Home() {
           <ol>
             <li>
               Add <span className="code">registerRoute</span> with a relevant
-              caching strategy for SWA'a API endpoints in
+              caching strategy for SWA'a API endpoints in{' '}
               <a href="https://github.com/webmaxru/pwa-on-swa/blob/main/src/sw/service-worker.js">
                 Service Worker
               </a>
@@ -112,10 +117,19 @@ function Home() {
           <h3>Error handling</h3>
           <ul>
             <li>
-              <a href="/non-existing-url">Non existing page</a>
+              <a href="/static/non-existing-url">Non existing page</a>
             </li>
             <li>
-              <a href="/account">Authentication error</a>
+              <a href="/account">Authentication error</a>. Instead of showing
+              this error you can automatically redirect to login page by
+              changing to{' '}
+              <span className="code">
+                "401": &#123; "redirect": "/login", "statusCode": 302 &#125;
+              </span>{' '}
+              in{' '}
+              <a href="https://github.com/webmaxru/pwa-on-swa/blob/main/staticwebapp.config.json">
+                SWA Config
+              </a>
             </li>
           </ul>
           <hr />

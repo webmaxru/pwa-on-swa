@@ -45,8 +45,7 @@
         "rewrite": "/400.html"
       },
       "401": {
-        "redirect": "/login",
-        "statusCode": 302
+        "rewrite": "/400.html"
       },
       "403": {
         "rewrite": "/400.html"
