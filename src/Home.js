@@ -8,6 +8,7 @@ function Home() {
       const res = await fetch(`/api/${slug}`);
       const json = await res.json();
       if (json.data) {
+        console.log(json.data)
         setApiResponse(json.data);
       }
     } catch (e) {
@@ -25,9 +26,9 @@ function Home() {
     <main align="center">
       <img src="/images/pwa-on-swa.png" alt="PWA on SWA" width="200" />
       <p>
-        Minimalistic starter of a Progressive Web Application scaffolded by
-        Create React App with a service worker automated by Workbox and
-        configured to run on Azure Static Web Apps
+        Minimalistic starter of a <a href="https://aka.ms/learn-pwa">Progressive Web Application</a> scaffolded by
+        Create React App with a service worker automated by <a href="https://workboxjs.org">Workbox</a> and
+        configured to run on <a href="https://aka.ms/swa-learn">Azure Static Web Apps</a>
       </p>
       <h1>Demo areas</h1>
 
@@ -91,7 +92,7 @@ function Home() {
             { apiResponse }
           ) : (
             <p>
-              <i>Click a button to trigger API endpoint</i>
+              <i>Open browser's console and click a button to trigger API endpoint</i>
             </p>
           )}
           <hr />
