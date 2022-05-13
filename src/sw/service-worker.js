@@ -2,7 +2,7 @@
 /* eslint-disable no-restricted-globals */
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { NavigationRoute, registerRoute } from 'workbox-routing';
-import { setCacheNameDetails, clientsClaim } from 'workbox-core';
+import { clientsClaim } from 'workbox-core';
 import { NetworkFirst, CacheFirst } from 'workbox-strategies';
 
 
@@ -25,15 +25,17 @@ precacheAndRoute(self.__WB_MANIFEST);
 const navHandler = createHandlerBoundToURL('/index.html');
 const navigationRoute = new NavigationRoute(navHandler, {
   denylist: [
-    new RegExp('/account'),
-    new RegExp('/admin'),
-    new RegExp('/login'),
-    new RegExp('/logout'),
-    new RegExp('/.auth'),
-    new RegExp('/aboutme'),
-    new RegExp('/400.html'),
-    new RegExp('/404.html'),
-    new RegExp('/privacy.html'),
+    new RegExp('^/account'),
+    new RegExp('^/admin'),
+    new RegExp('^/login'),
+    new RegExp('^/logout'),
+    new RegExp('^/.auth'),
+    new RegExp('^/aboutme'),
+    new RegExp('^/400.html'),
+    new RegExp('^/404.html'),
+    new RegExp('^/privacy.html'),
+    new RegExp('^/images/'),
+    new RegExp('^/static/'),
   ], // Also might be specified explicitly via allowlist
 });
 registerRoute(navigationRoute);

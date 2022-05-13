@@ -13,7 +13,7 @@ module.exports = async function (context, req) {
 
   context.res = {
     body: {
-      data: 'Some data with Network First strategy',
+      data: 'Some data with Cache First strategy',
       clientPrincipal: clientPrincipal,
     },
   };
