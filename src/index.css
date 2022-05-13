@@ -1,3 +1,7 @@
+html {
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,153 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+
+  color: #333333;
+
+  display: flex;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+a {
+  color: #0062ad;
+}
+
+a:hover {
+  color: #002847;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #444444;
+  margin: 0;
+  line-height: 0.5em;
+}
+
+h3 {
+  font-size: 1em;
+  color: #444444;
+  margin-bottom: 1em;
+  line-height: 1em;
+}
+
+h4 {
+  font-size: 0.5em;
+  color: #243a5e;
+  margin-bottom: 0;
+  line-height: 0.5em;
+}
+
+ul,
+ol {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+button,
+.button {
+  background: #0062ad;
+  border-radius: 5px;
+  color: #ffffff;
+  border: 0;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+}
+
+button:hover,
+.button:hover {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+button:active,
+.button:active {
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.6);
+}
+
+dl {
+  text-align: left;
+}
+
+pre {
+  border-radius: 5px;
+  border: 1px dashed #243a5e;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  font-size: 1em;
+  font-family: monospace, monospace;
+}
+
+.code {
+  background-color: #eeeeee;
+  color: #000000;
+  font-family: monospace, monospace;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #cccccc;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'] {
+  background: #ffffff;
+  border-radius: 5px;
+  color: #333333;
+  border: 1px solid #243a5e;
+  padding: 0.5em;
+  font-size: 1em;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 0.5em;
+  display: block;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  align-items: stretch;
+}
+
+.card {
+  margin: 1rem;
+  flex-basis: 35%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.5;
 }
