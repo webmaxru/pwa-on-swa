@@ -140,6 +140,12 @@ label {
   align-items: stretch;
 }
 
+@media (min-width: 768px) {
+  .grid {
+    flex-direction: row;
+  }
+}
+
 .card {
   margin: 1rem;
   flex-basis: 35%;
